@@ -1,6 +1,8 @@
 #include <QApplication>
 #include "mainwindow.h"
 
+#include <usermsg/usermsgman.h>
+
 /* ------------------------------------------------------------------------- */
 void  printUsage   ()
 {
@@ -39,8 +41,16 @@ int   main(int argc, char *argv[])
 
 	for (;;) {
 		if (!parseArgs (argc, argv, &ret_val)) break;
+
+        UserMsgMan::init (true);
+
         MainWindow mw;
         mw.show ();
+        MainWindow * p_mw = &mw;
+        QObject::connect (
+                    UserMsgMan::singleton (), SIGNAL(signalShow(UserMsg)),
+                    p_mw, SLOT(onShowMessage(UserMsg)));
+
         apl.exec ();
 		break;
 	}

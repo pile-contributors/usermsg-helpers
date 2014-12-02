@@ -2,9 +2,6 @@
 # Automatically link Qt executables to qtmain target on Windows
 cmake_policy(SET CMP0020 OLD)
 
-# Instruct CMake to run moc automatically when needed.
-set ( CMAKE_AUTOMOC ON)
-
 # Find the QtWidgets library
 find_package(Qt5Core)
 find_package(Qt5Widgets)
@@ -35,14 +32,17 @@ include_directories(
 set ( CMAKE_INCLUDE_CURRENT_DIR ON)
 
 qt5_wrap_ui(LIB_UIS_SRC
+    "messagebx.ui"
     "mainwindow.ui")
 
 add_executable(gui-user
     ${USERMSG_SOURCES}
     ${USERMSG_HEADERS}
     ${LIB_UIS_SRC}
+    messagebx.cpp
     mainwindow.cpp
     main.cc)
+
 qt5_use_modules(gui-user Core Widgets)
 
 if (USERMSG_LIBRARY)

@@ -7,25 +7,94 @@
     <x>0</x>
     <y>0</y>
     <width>569</width>
-    <height>350</height>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Test Window</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="error_message">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>141</width>
-      <height>23</height>
+      <width>132</width>
+      <height>262</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Error Message</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="enabled_message">
+       <property name="text">
+        <string>Enabled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="collapse_on_enable">
+       <property name="text">
+        <string>Collapse on enable</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="error_message">
+       <property name="text">
+        <string>Error Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="warning_message">
+       <property name="text">
+        <string>Warning Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="info_massage">
+       <property name="text">
+        <string>Info Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="debug_error_message">
+       <property name="text">
+        <string>Debug Error Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="debug_warning_message">
+       <property name="text">
+        <string>Debug  Warning Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="debug_info_message">
+       <property name="text">
+        <string>Debug Info Message</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="use_class">
+       <property name="text">
+        <string>Use class</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="static_call">
+       <property name="text">
+        <string>Static call</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -41,6 +41,9 @@ include_directories(
     "${CMAKE_CURRENT_BINARY_DIR}"
     "${CMAKE_CURRENT_SOURCE_DIR}")
 
+# Instruct CMake to run moc automatically when needed.
+set ( CMAKE_AUTOMOC ON)
+
 find_package(Qt5 COMPONENTS Core)
 if(Qt5Core_FOUND)
     include_directories(
