@@ -1,3 +1,6 @@
 [submodule "usermsg"]
 	path = usermsg
 	url = J:/git_repos/usermsg
+[submodule "usermsg-gui"]
+	path = usermsg-gui
+	url = git@github.com:pile-contributors/usermsg-gui.git
