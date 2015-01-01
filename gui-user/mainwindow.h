@@ -37,6 +37,11 @@ private slots:
 
     void on_enabled_message_toggled(bool checked);
 
+    void on_clear_log_clicked();
+
+    void onCheckType();
+
+
 private:
     Ui::MainWindow *ui;
 };

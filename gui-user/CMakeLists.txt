@@ -23,6 +23,7 @@ endif (Qt5Core_FOUND)
 
 if (NOT INCLUDE_PILE_SOURCES_DIRECTLY)
     set (USERMSG_LIBRARY usermsg)
+    set (USERMSGGUI_LIBRARY usermsggui)
 endif()
 
 include_directories(
@@ -45,7 +46,19 @@ add_executable(gui-user
 
 qt5_use_modules(gui-user Core Widgets)
 
+set(LIBS)
+
 if (USERMSG_LIBRARY)
-	target_link_libraries(gui-user
+    list(APPEND LIBS
 		${USERMSG_LIBRARY})
+endif()
+if (USERMSGGUI_LIBRARY)
+    list(APPEND LIBS
+        ${USERMSGGUI_LIBRARY})
+    message(STATUS "USERMSGGUI_LIBRARY=${USERMSGGUI_LIBRARY}")
+endif()
+
+if (LIBS)
+    target_link_libraries(gui-user
+        ${LIBS})
 endif()

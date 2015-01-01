@@ -42,9 +42,9 @@ include_directories(
     "${CMAKE_CURRENT_SOURCE_DIR}")
 
 # Instruct CMake to run moc automatically when needed.
-set ( CMAKE_AUTOMOC ON)
+set (CMAKE_AUTOMOC ON)
 
-find_package(Qt5 COMPONENTS Core)
+find_package(Qt5 COMPONENTS Core Widgets)
 if(Qt5Core_FOUND)
     include_directories(
          ${Qt5Core_INCLUDE_DIRS})
@@ -54,9 +54,13 @@ if(INCLUDE_PILE_SOURCES_DIRECTLY)
     include(pile_support)
     pileInclude (UserMsg)
     usermsgInit(PILE)
+    pileInclude (UserMsgGui)
+    usermsgguiInit(PILE)
 else()
     set (USERMSG_BUILD_MODE SHARED)
     add_subdirectory(usermsg)
+    set (USERMSGGUI_BUILD_MODE SHARED)
+    add_subdirectory(usermsggui)
 endif()
 
 add_subdirectory(tests)

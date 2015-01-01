@@ -11,6 +11,22 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->use_class->setChecked (true);
+
+    connect(ui->ck_dbg_err, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+    connect(ui->ck_dbg_wrn, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+    connect(ui->ck_dbg_info, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+    connect(ui->ck_err, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+    connect(ui->ck_warning, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+    connect(ui->ck_info, SIGNAL(toggled(bool)),
+            this, SLOT(onCheckType()));
+
+    connect(UserMsgMan::singleton (), SIGNAL(signalShow(UserMsg)),
+            ui->log_window, SLOT(showMessage(UserMsg)));
 }
 
 MainWindow::~MainWindow()
@@ -107,4 +123,14 @@ void MainWindow::on_enabled_message_toggled(bool checked)
     } else {
         UserMsgMan::disable ();
     }
+}
+
+void MainWindow::on_clear_log_clicked()
+{
+
+}
+
+void MainWindow::onCheckType()
+{
+
 }
