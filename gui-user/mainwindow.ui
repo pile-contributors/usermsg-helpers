@@ -220,7 +220,7 @@
   <customwidget>
    <class>UserMsgLogW</class>
    <extends>QTextEdit</extends>
-   <header location="global">usermsggui/usermsglogw.h</header>
+   <header location="global">usermsg-gui/usermsglogw.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
