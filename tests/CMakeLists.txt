@@ -23,6 +23,7 @@ endif()
 add_executable(test_basic
     ${USERMSG_SOURCES}
     ${USERMSG_HEADERS}
+    logtest.cc
     basic.cc)
 
 target_link_libraries(test_basic
